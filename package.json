@@ -1,0 +1,19 @@
+{
+    "name": "tattoo-portfolio-generator",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "dev": "nuxt dev",
+        "build": "nuxt build",
+        "generate": "nuxt generate",
+        "preview": "nuxt preview"
+    },
+    "dependencies": {
+        "googleapis": "^133.0.0"
+    },
+    "devDependencies": {
+        "@types/node": "^20.12.12",
+        "nuxt": "^3.13.2",
+        "typescript": "^5.6.3"
+    }
+}
