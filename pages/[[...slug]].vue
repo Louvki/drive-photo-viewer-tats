@@ -27,6 +27,7 @@ const { data, pending, error } = await useAsyncData<DriveFolderNode>(
 const activeImage = ref<DriveImage | null>(null);
 
 const openModal = (image: DriveImage) => {
+  console.log('Opening modal for image:', image.name);
   activeImage.value = image;
 };
 
@@ -110,15 +111,17 @@ onBeforeUnmount(() => {
     </section>
   </section>
 
-  <Teleport to="body">
-    <div v-if="activeImage" class="modal-overlay" @click.self="closeModal">
-      <div class="modal-content">
-        <button class="modal-close" type="button" aria-label="Close image preview" @click="closeModal">
-          X
-        </button>
-        <img :src="activeImage.fullSizeUrl" :alt="activeImage.name" />
+  <ClientOnly>
+    <Teleport to="body">
+      <div v-if="activeImage" class="modal-overlay" @click.self="closeModal">
+        <div class="modal-content">
+          <button class="modal-close" type="button" aria-label="Close image preview" @click="closeModal">
+            X
+          </button>
+          <img :src="activeImage.fullSizeUrl" :alt="activeImage.name" />
+        </div>
       </div>
-    </div>
-  </Teleport>
+    </Teleport>
+  </ClientOnly>
 </template>
 

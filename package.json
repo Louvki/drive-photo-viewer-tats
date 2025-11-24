@@ -6,7 +6,8 @@
         "dev": "nuxt dev",
         "build": "nuxt build",
         "generate": "nuxt generate",
-        "preview": "nuxt preview"
+        "preview": "nuxt preview",
+        "deploy": "nuxt generate && cd .output/public && git init && git add -A && git commit -m 'Deploy' && git push -f $DEPLOY_GIT_REPO main && cd ../.."
     },
     "dependencies": {
         "googleapis": "^133.0.0"

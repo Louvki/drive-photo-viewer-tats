@@ -125,9 +125,9 @@ a {
   padding: 0;
   border: none;
   border-radius: 1rem;
-  overflow: hidden;
+  overflow: visible;
   cursor: pointer;
-  background: var(--surface-alt);
+  background: transparent;
   aspect-ratio: 1 / 1;
   display: flex;
 }

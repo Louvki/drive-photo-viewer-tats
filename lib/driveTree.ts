@@ -70,10 +70,16 @@ const makeSlug = (rawName: string | undefined, id: string): string => {
 };
 
 const previewUrlFor = (id: string): string => {
+  if (process.dev) {
+    return `https://placehold.co/600x800/1a1a1a/666?text=Preview+${id.slice(0, 6)}`;
+  }
   return `https://drive.google.com/thumbnail?id=${id}&sz=w2000-h2000`;
 };
 
 const fullSizeUrlFor = (id: string): string => {
+  if (process.dev) {
+    return `https://placehold.co/1200x1600/1a1a1a/666?text=Full+${id.slice(0, 6)}`;
+  }
   return `https://lh3.googleusercontent.com/d/${id}`;
 };
 

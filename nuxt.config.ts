@@ -14,7 +14,7 @@ export default async () => {
         devtools: { enabled: true },
         css: ['~/assets/css/main.css'],
         app: {
-            NUXT_APP_BASE_URL: 'https://louvki.github.io/drive-photo-viewer-tats/',
+            baseURL: process.env.NUXT_APP_BASE_URL || '/',
             head: {
                 title: 'Tattoo Portfolio Generator',
                 htmlAttrs: { lang: 'en' },
