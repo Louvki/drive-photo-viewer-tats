@@ -1,6 +1,4 @@
-import { defineNuxtConfig } from 'nuxt/config';
-
-export default defineNuxtConfig(async () => {
+export default async () => {
     let prerenderRoutes = ['/'];
 
     if (
@@ -16,6 +14,7 @@ export default defineNuxtConfig(async () => {
         devtools: { enabled: true },
         css: ['~/assets/css/main.css'],
         app: {
+            NUXT_APP_BASE_URL: 'https://louvki.github.io/drive-photo-viewer-tats/',
             head: {
                 title: 'Tattoo Portfolio Generator',
                 htmlAttrs: { lang: 'en' },
@@ -54,5 +53,5 @@ export default defineNuxtConfig(async () => {
             googleDriveRootId: process.env.GOOGLE_DRIVE_ROOT_ID,
         },
     };
-});
+};
 
